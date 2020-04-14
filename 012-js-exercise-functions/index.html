@@ -14,7 +14,23 @@
           var name = prompt("Enter your name:");
           alert("welcome "+name);
        }
+  
+      function findSqr(){
+          var num = prompt("Enter a number");
+          alert("Square is "+(num*num));
+      }
+      function countCharacters(){
+          var charName = prompt("Enter a character");
+          var stringName = prompt("Enter a string Name:");
 
+          var initCount = 0;
+          for(var i=0; i<stringName.length; i++){
+              if (stringName[i] == charName){
+                 initCount++;
+              }
+          }
+          alert("character count = "+initCount);
+      }
        
     </script>
 </head>
@@ -22,6 +38,8 @@
     <script type="text/javascript">
      wishUser();
      personalWish();
+     findSqr();
+     countCharacters();
     </script>
 </body>
 </html>
