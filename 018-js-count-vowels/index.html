@@ -7,19 +7,22 @@
     <title>Demo-Count-Vovels</title>
     <script type="text/javascript">
     var vString = prompt("Enter a word / statement:");
-    var vowelCount = 0;
-    for (var i =0; i < vString.length; i++){
-        switch (vString[i]){
-            case 'a':
-            case 'e':
-            case 'i':
-            case 'o':
-            case 'u':
-               vowelCount++;
-               break;
-        };
-    }
-    alert("Number of Vowels = "+vowelCount);
+    function countVowels(iString){
+        var vowelCount = 0;
+        for (var i =0; i < iString.length; i++){
+            switch (iString[i]){
+                case 'a':
+                case 'e':
+                case 'i':
+                case 'o':
+                case 'u':
+                     vowelCount++;
+                     break;
+            };
+        }
+      return vowelCount;
+    } // end function
+    alert("Number of Vowels = "+countVowels(vString));
     </script>
 </head>
 <body>
