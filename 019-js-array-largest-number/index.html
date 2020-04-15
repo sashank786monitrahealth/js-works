@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Demo - Find largest value in array</title>
+    <script type="text/javascript">
+       var vArray = [10,20,30,25,23,40,78,56,42,12,13,7];
+
+       function findLargest(iArray){
+          var vMax =0;
+          for(var i=0; i <iArray.length;i++){
+             if (i==0){
+                vMax = iArray[i]
+             } else {
+                if  (iArray[i] > vMax){
+                    vMax = iArray[i]
+                }
+             }
+          }
+          return vMax;
+       }
+       
+       console.log(vArray);
+       console.log("Largest element in array = "+findLargest(vArray));
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
