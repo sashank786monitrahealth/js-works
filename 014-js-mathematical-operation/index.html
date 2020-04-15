@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>Exercise</title>
+
+<script type="text/javascript">
+
+function convertToKm()
+
+{
+
+var vMile = document.getElementById("miles").value;
+var kms = vMile * 1.609344;
+document.getElementById("result").innerHTML = kms;
+
+}
+
+</script>
+
+</head>
+
+<body>
+
+<input type="text" id="miles" size="10"/> mile(s) =
+
+<span id="result"></span> <br /><br />
+
+<button id="btnClick" onclick="convertToKm();">Convert</button>
+
+</body>
+
+</html>
