@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Demo - Implement a Queue</title>
+    <script type="text/javascript">
+       var val = prompt("Enter your name:");
+       function addToQueue(iArr, val){
+           var out = iArr.shift();
+           iArr[iArr.length] = val;
+           document.write("New Queue: "+iArr+"<br/>"+"<br/>");
+           return out
+       }
+       var myArr = ["Ramesh","Mahesh","Ganesh","Suresh","Devesh"];
+           document.write("Old Queue: "+myArr+"<br/>");
+       var out = addToQueue(myArr,val);
+       document.write("Person left the Queue:"+out)+"<br/>";
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
