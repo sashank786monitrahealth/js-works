@@ -10,13 +10,15 @@
         var myDate = new Date().toLocaleTimeString();
         document.getElementById("clock").innerHTML = myDate ;
     }
-
+    var timer;
     function displayClock(){
-        setInterval(updateClock,1000);
+        timer = setInterval(updateClock,1000);
     }
+
     </script>
 </head>
 <body onload="displayClock();">
     <div id="clock"></div>
+    <button onclick="clearInterval(timer);">Stop</button>
 </body>
 </html>
