@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Demo - Country Information</title>
+    <style>
+    #main{
+        margin:0px auto;
+        border:2px solid black;
+        width:400px;
+    }
+
+    </style>
+
+    <script type="text/javascript">
+    var CountryInfo = {
+                        "India":{"capital":"New Delhi","currency":"Rupee","language":"Hindi"},
+                        "Bangladesh":{"capital":"Dhaka","currency":"Taka","language":"Bengali"},
+                        "Australia":{"capital":"Canberra","currency":"Dollar","language":"English"},
+                      };
+         function displayDetails(){
+             var choice = document.getElementById("country").value;
+             var countryInfo = CountryInfo[choice];
+             if (countryInfo == undefined) {
+             document.getElementById("capital").value = "";
+             document.getElementById("currency").value = "";
+             document.getElementById("language").value = "";
+} else {
+             document.getElementById("capital").value = countryInfo.capital;
+             document.getElementById("currency").value = countryInfo.currency;
+             document.getElementById("language").value = countryInfo.language;
+}
+         }
+    </script>
+</head>
+<body>
+    <div id="main">
+        <h2 align="center">Country Trivia</h2>
+        <h3 align="center">Enter country below:</h3>
+        <table align="center">
+            <tr>
+                <td>Country:</td>
+                <td><select id="country" onchange="displayDetails();">
+                    <option value="empty">Select==></option>
+                    <option value="India">India</option>
+                    <option value="Bangladesh">Bangladesh</option>
+                    <option value="Australia">Australia</option>
+                </select></td>
+        </tr>
+    <tr> <td>Capital:</td> <td> <input type="text" id="capital" disabled/> </td>
+    </tr>
+    <tr> <td>Currency:</td> <td> <input type="text" id="currency" disabled/> </td>
+    </tr>
+    <tr> <td>Primary Language:</td> <td> <input type="text" id="language" disabled/> </td>
+    </tr>
+    </table>
+    </div>
+</body>
+</html>
