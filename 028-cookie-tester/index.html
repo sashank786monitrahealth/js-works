@@ -39,6 +39,20 @@
         btn.addEventListener("click",btnAction);
     });
 
+    document.addEventListener("DOMContentLoaded",function(){
+         let weekInMilliSeconds = 7*24*3600*1000;
+
+         const now = new Date();
+         now.setTime(now.getTime()+weekInMilliSeconds);
+
+         let  nextWeek = (now.getDate());
+         let day = ("0"+nextWeek).slice(-2);
+         let month = ("0"+(now.getMonth()+1)).slice(-2);
+         let year = (now.getFullYear());
+         document.querySelector("input[type=date]").value = year+"-"+month+"-"+day;
+         console.log(year);
+    });
+
     function btnAction(e){
         console.log(e.srcElement.innerText.indexOf(" "));
         let temp = e.srcElement.innerText.substr(0,e.srcElement.innerText.indexOf(" "));
