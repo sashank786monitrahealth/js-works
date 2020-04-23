@@ -29,6 +29,21 @@
     <button class="btn4">All Cookies</button>
 
     <div class="output"></div>
-    <script type="text/javascript"></script>
+    <script type="text/javascript">
+    const output = document.querySelector(".output");
+    const btns = document.querySelectorAll("button");
+    const getVals = document.querySelectorAll("input");
+
+    btns.forEach(function(btn){
+        //console.log(btn);
+        btn.addEventListener("click",btnAction);
+    });
+
+    function btnAction(e){
+        console.log(e.srcElement.innerText.indexOf(" "));
+        let temp = e.srcElement.innerText.substr(0,e.srcElement.innerText.indexOf(" "));
+        console.log("temp = "+temp);
+    }
+    </script>
 </body>
 </html>
