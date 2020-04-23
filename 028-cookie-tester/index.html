@@ -56,7 +56,16 @@
     function btnAction(e){
         console.log(e.srcElement.innerText.indexOf(" "));
         let temp = e.srcElement.innerText.substr(0,e.srcElement.innerText.indexOf(" "));
+        let v = {};
+
         console.log("temp = "+temp);
+        getVals.forEach(function(item,index){
+            let tempName = item.getAttribute("name");
+            let tempValue = (tempName != 'cookieExpire' ? item.value : item.valueAsDate);
+            v[tempName] = tempValue;
+        });
+
+            console.log(v);
     }
     </script>
 </body>
