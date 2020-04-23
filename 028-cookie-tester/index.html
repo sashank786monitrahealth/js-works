@@ -63,10 +63,67 @@
             let tempName = item.getAttribute("name");
             let tempValue = (tempName != 'cookieExpire' ? item.value : item.valueAsDate);
             v[tempName] = tempValue;
+
         });
 
-            console.log(v);
+        if (temp == "Set"){
+            setCookie(v.cookieName,v.cookieValue,v.cookieExpire);
+        } else if (temp == 'Get'){
+            getCookie(v.cookieName)
+        } else if (temp == "Delete"){
+            eraseCookie(v.cookieName);
+        } else if (temp == "All"){
+            listCookies();
+        }
     }
+
+    function setCookie(name, value, expiry){
+        console.log(expiry.toUTCString());
+        if (value.length > 0){
+            document.cookie = name+"="+encodeURIComponent(value)+"; path=/;expires="+expiry.toUTCString();
+            console.log(document.cookie);
+            output.textContent = "Cookie "+name+" set.";
+           
+        } else {
+            output.textContent = "cookie needs a value";
+        }
+    }
+
+    function getCookie(name){
+       let cookies = document.cookie.split(";");
+       console.log(cookies);
+       output.textContent = "No Cookies Found.";
+       cookies.forEach(function(item,index){
+           cookiename = item.split("=")[0].trim()
+           cookievalue = item.split("=")[1].trim()
+           console.log("cookiename = "+cookiename)
+            //output.textContent = "";
+           if (cookiename == name){
+            output.textContent = "Found: "+cookiename+" is "+decodeURIComponent(cookievalue);
+           }
+       })
+    }
+
+    function eraseCookie(name){
+        document.cookie = name+"=; path=/; expires=Thu, 01 Jan 1970 00:00:01 GMT;";
+        output.textContent = "Cookie Removed: "+name;
+
+    }
+
+    function listCookies(){
+       let cookies = document.cookie.split(";");
+       console.log(cookies);
+       output.textContent = "No Cookies Found.";
+       cookies.forEach(function(item,index){
+           if (index == 0){
+            output.textContent = item;
+           } else {
+           output.textContent += "\n\n"+item;
+           }
+       })
+
+    }
+
     </script>
 </body>
 </html>
