@@ -17,6 +17,12 @@
         font-size:1.5em;
         padding:5px;
     }
+
+    .cookie,.output{
+        padding:15px;
+        font-size:1.2em;
+        font-family:fantasy;
+    }
     </style>
 </head>
 <body>
@@ -113,15 +119,20 @@
     function listCookies(){
        let cookies = document.cookie.split(";");
        console.log(cookies);
-       output.textContent = "No Cookies Found.";
+       //output.textContent = "No Cookies Found.";
        cookies.forEach(function(item,index){
-           if (index == 0){
-            output.textContent = item;
-           } else {
-           output.textContent += "\n\n"+item;
-           }
+          let tempCookie = item.split("=");
+          if (tempCookie[0].length > 0){
+          let div = document.createElement("div");
+          div.setAttribute("class","cookie");
+          div.addEventListener("click",function(){
+              console.log(tempCookie);
+          })
+          div.textContent = tempCookie[0].trim()+" "+decodeURIComponent(tempCookie[1]);
+          output.appendChild(div);
+          }
        })
-
+     
     }
 
     </script>
