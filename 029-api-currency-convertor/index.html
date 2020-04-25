@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>API - Currency Converter</title>
+    <style>
+      *{
+          font-family: cursive;
+      }
+
+      #container{
+          height:150px;
+          margin:0px auto;
+      }
+
+      h2{
+          text-align:center;
+          font-size:60px;
+      }
+
+      table{
+          margin:0px auto;
+      }
+
+      span{
+          font-size:30px;
+      }
+      input{
+          font-size:30px;
+          border:2px solid black;
+          border-radius:10px;
+      }
+      select{
+          font-size:30px;
+          border-radius:10px;
+      }
+      #result{
+         font-size:50px;
+         text-align:center;
+      }
+    </style>
+    <script>
+       function currencyConversion(){
+           var from = document.getElementById("from").value;
+           var to = document.getElementById("to").value;
+           var frmAmt = document.getElementById("frmAmt").value;
+           var xmlhttp = new XMLHttpRequest();
+           var url = "https://api.exchangeratesapi.io/latest?symbols="+from+","+to;
+           xmlhttp.open("GET",url, true);
+           xmlhttp.send();
+
+           xmlhttp.onreadystatechange = function(){
+               //alert(xmlhttp.readyState+":"+xmlhttp.status);
+
+               if ((xmlhttp.readyState == 4) && (xmlhttp.status==200)){
+                   var result = xmlhttp.responseText;
+                   var resultObj = JSON.parse(result);
+                   //alert(result);
+                   var vDisplayOutput = frmAmt*(resultObj.rates[to]/resultObj.rates[from]);
+                   console.log(vDisplayOutput);
+                   document.getElementById("result").innerHTML = vDisplayOutput.toFixed(2);
+               }
+           }
+       }
+    </script>
+</head>
+<body onload="currencyConversion();">
+    <div id="container">
+        <h2>Currency Converter</h2>
+        <table>
+            <tr>
+                <th><span>Amount</span></th>
+                <th><span>From</span></th>
+                <th><span>To</span></th>
+
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" id="frmAmt" value="1" onkeyup="currencyConversion();">
+                </td>
+                <td>
+                    <select id="from" onchange="currencyConversion();">
+                    <option value="USD" selected>USD</option>
+                    <option value="INR">INR</option>
+                    </select>
+                </td>
+                <td>
+                    <select id="to" onchange="currencyConversion();">
+                        <option value="USD">USD</option>
+                        <option value="INR" selected>INR</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <div id="result"></div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
