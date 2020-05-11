@@ -1,5 +1,5 @@
 <?php
 
-echo "hello";
+echo json_encode("hello");
 
 ?>

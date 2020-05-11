@@ -16,11 +16,17 @@ function check_user(){
        "password": password
     }
 
-    fetch("http://127.0.0.1:8080/check_user.php",
+    //fetch("http://127.0.0.1:8080/check_user.php",
+
+    fetch("check_user.php",
     {
         method:'post',
         body:JSON.stringify(post_data),
-    });
+    }).then(response=>response.json())
+      .then(data=>
+{
+  info.style.display="block";
+});
 }
 
 
