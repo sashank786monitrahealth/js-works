@@ -7,14 +7,14 @@ $input = json_decode($input);
 
 function check_user($email, $password){
 
-//$response = "try again";
-$response = false;
+//$result = "try again";
+$result = false;
 if($email=="demo" && $password =="demo"){
     //$response = correct;
-    $response = true;
+    $result = true;
 }
 
-return $response;
+return $result;
 
 }
 
