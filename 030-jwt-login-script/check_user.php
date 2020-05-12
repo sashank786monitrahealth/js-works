@@ -4,15 +4,24 @@ $input = file_get_contents('php://input');
 $input = json_decode($input);
 //print_r($input);
 
-if($input->mode == "check_user"){
- 
+
+function check_user($email, $password){
 
 //$response = "try again";
 $response = false;
-if($input->email=="demo" && $input->password =="demo"){
+if($email=="demo" && $password =="demo"){
     //$response = correct;
     $response = true;
 }
+
+return $response;
+
+}
+
+if($input->mode == "check_user"){
+ 
+
+    $response =  check_user($input->email, $input->password);
 
    
 }
