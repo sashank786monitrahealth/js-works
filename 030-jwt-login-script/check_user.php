@@ -1,11 +1,15 @@
 <?php
 
+include_once('tokens.php');
+
 $input = file_get_contents('php://input');
 $input = json_decode($input);
 //print_r($input);
 
 
 function check_user($email, $password){
+
+    $token = false;
 
     $email = filter_var($email, FILTER_VALIDATE_EMAIL);
 
@@ -31,10 +35,11 @@ function check_user($email, $password){
     //echo $rowCount;
 
     if ($rowCount > 0){
-      return $rowCount;
+        $token = generate_token('myapp');
+      //return $rowCount;
     }
 
-    return $rowCount;
+    return $token;
 
     /*
     foreach ($dbh->query($query) as $row)
