@@ -26,6 +26,15 @@ function check_user(){
       .then(data=>
 {
   info.style.display="block";
+
+if(!data){
+  info.innerText = "Non Existing user";
+} else {
+
+  info.innerText = 'Successful login';
+
+}
+
 });
 }
 
