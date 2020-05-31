@@ -3,3 +3,8 @@ let logCall = function(){
 };
 
 setTimeout(logCall, 3000);
+
+//using anonymous function
+setTimeout(function(){
+    console.log("first staement");
+}, 2000);
