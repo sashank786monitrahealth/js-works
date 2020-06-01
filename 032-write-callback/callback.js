@@ -24,3 +24,16 @@ processStudents(students, function(obj){
         console.log(obj.name+" "+"passed.");
     }
 })
+
+let determineTotal = function(){
+    let total =0,
+        count = 0;
+
+    processStudents(students, function(obj){
+        total = total + obj.score;
+        count++;
+    })
+    console.log("Total score: "+total+" Total Count:"+count);
+}
+
+determineTotal();
