@@ -44,7 +44,7 @@ let determineTotal = function(){
     console.log("Total score: "+total+" Total Count:"+count);
 }
 
-determineTotal();
+setTimeout(determineTotal,0);
 
 console.log("end of code.");
 
