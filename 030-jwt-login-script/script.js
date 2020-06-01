@@ -34,6 +34,7 @@ if(!data){
   //info.innerText = 'Successful login';
   info.innerText = data;
   localStorage.setItem('token',data);
+  location="user_profile.html";
 
 }
 
