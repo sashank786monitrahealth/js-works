@@ -20,7 +20,7 @@ let processStudents = function(data,callback){
     for(let i=0; i<data.length;i++){
         if(data[i].school.toLowerCase() === "east"){
             if(typeof callback == "function"){
-                callback(data[i]);
+                setTimeout(callback(data[i]),0);
             }
         }
     }
