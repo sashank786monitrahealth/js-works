@@ -15,3 +15,7 @@ let asyncFunction2 = function(){
         },3000);
     });
 };
+
+
+let promise1 = asyncFunction();
+console.log(promise1);
