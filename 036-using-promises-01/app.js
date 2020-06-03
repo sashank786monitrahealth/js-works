@@ -31,3 +31,5 @@ let promise = asyncFunction();
 promise.then(function(val){
        console.log("Yeah!"+" - val = "+val);
 });
+
+console.log("The code is Asynchronous!")
