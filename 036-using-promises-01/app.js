@@ -27,5 +27,7 @@ wordObj;
 let promise = asyncFunction();
 
 /*we can use the then method - when the promise is resolved. Or when it fails!*/
-
-promise.then();
+/* Here, val is the value that is going to be returned by the promise.*/
+promise.then(function(val){
+       console.log("Yeah!"+" - val = "+val);
+});
