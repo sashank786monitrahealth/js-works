@@ -16,7 +16,7 @@ let asyncFunction2 = function() {
     });
 };
 
-let chuckNorrisAPI = "https://api.chucknorris.io/jokes/random" , joke;
+let chuckNorrisAPI = "https://api.chucknorris.io/jokes/random" , jokePromise, joke;
 
 /*
 let wordnikWords = "http://api.wordnik.com/v4/words.json",
@@ -57,8 +57,11 @@ console.log("The code is synchronous!");
 
 fetch(chuckNorrisAPI).then(function(response){
     //wordObj = response;
-    joke = response.body;
-    console.log(response);
+    jokePromise = response.json();
+    return jokePromise;
+}).then(function(data){
+    joke = data.value;
     console.log(joke);
+    document.getElementById("joke").innerHTML = joke;
 });
 
