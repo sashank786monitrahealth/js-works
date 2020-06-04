@@ -12,7 +12,7 @@ let todo = {
     title:"ee ho! essel world"
 }
 
-fetch('https://jsonplaceholder.typicode.com/todos/',{
+fetch('https://sonplaceholder.typicode.com/todos/',{
     method:'POST',
     headers:{
         'Content-Type':"application/json"
