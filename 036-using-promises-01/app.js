@@ -16,7 +16,7 @@ let asyncFunction2 = function() {
     });
 };
 
-let chuckNorrisAPI = "https://api.chucknorris.io/jokes/random" , jokePromise, joke;
+let chuckNorrisAPI = "https://api.chucknorris.io/jokes/random/" , jokePromise, joke;
 
 /*
 let wordnikWords = "http://api.wordnik.com/v4/words.json",
@@ -63,5 +63,9 @@ fetch(chuckNorrisAPI).then(function(response){
     joke = data.value;
     console.log(joke);
     document.getElementById("joke").innerHTML = joke;
+    return data
+}).catch(function(err){
+    console.log("err = "+err);
+    document.getElementById("joke").innerHTML = err;
 });
 
