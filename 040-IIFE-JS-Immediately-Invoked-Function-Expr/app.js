@@ -9,9 +9,17 @@ let product = function(){
 product();
 */
 
+/*
 // Now to invoke this immediately we put paranthesis at the end while defining
 let product = function(){
     console.log(5*5);
 }();
 
 // adding a paranthesis -  causes the function to invoke immediately
+*/
+
+// Immediately Invoked Function Expression
+(function(){
+    console.log(5*5);
+}()
+);
