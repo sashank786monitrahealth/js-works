@@ -7,9 +7,9 @@ function communication(){
     const getGreet = function(){
         let d = new Date();
         if (d.toLocaleTimeString().includes('AM')){
-            greet = "Good Morning"
+            greet = "Good Morning "
         } else {
-            greet = "Hello";
+            greet = "Hello ";
         }
 
         return greet;
@@ -18,4 +18,12 @@ function communication(){
     const greeting = function(name) {
         console.log(`${getGreet() + name}! Welcome to the course.`);
     };
+
+    // Public methods and properties
+    return {
+           greetUser: greeting
+    }
 };
+
+var COMM = communication();
+COMM.greetUser("Sonam Wangchuk");
