@@ -1,6 +1,6 @@
 "use strict";
 
-function communication(){
+var COMM = (function communication(){
     let greet = "hello",
     goodbye = "So long";
 
@@ -23,7 +23,7 @@ function communication(){
     return {
            greetUser: greeting
     }
-};
+})();
 
-var COMM = communication();
-COMM.greetUser("Sonam Wangchuk");
+
+COMM.greetUser("Sonam Wangchuk from Ladakh");
