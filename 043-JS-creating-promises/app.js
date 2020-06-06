@@ -8,7 +8,7 @@
 // the callback function will have two parameters
 // 1. resolve - this function will be called when a promise is resolved.
 // 2. reject - this will be called when the promise is rejected.
-let a = new Promise(function(resolve, reject){
+let a = new Promise(function(resolve,reject){
       setTimeout(function(){
           reject("Done.")
       },4000);
@@ -18,8 +18,9 @@ let a = new Promise(function(resolve, reject){
 // remmeber to use that promise, we have a method then.
 
 a.then(function(val){
-   console.log(val); // called when resolved
+   console.log("resolved: "+val); // called when resolved
 }, function(val){
     console.log("rejected: "+val); // called when rejected
 })
 
+console.log("this is asynch code");
