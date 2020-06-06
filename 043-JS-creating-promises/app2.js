@@ -18,11 +18,18 @@ let asyncFunction2 = function(){
 
 let setTimeoutP = function(time){
     return new Promise(function(res, rej){
+        if(isNaN(time)){
+           rej("A number is required.")
+        } else {
         setTimeout(res, time);
+        }
     });
 };
 
-setTimeoutP(2000)
+setTimeoutP("a2000")
 .then(function(){
     console.log("app2.js: Done.");
+})
+.catch(function(err){
+    console.error(err);
 });
