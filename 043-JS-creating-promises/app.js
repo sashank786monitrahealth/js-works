@@ -14,5 +14,10 @@ let a = new Promise(function(resolve, reject){
       },4000);
 });
 
-console.log(a);
+// now let us see how we would use that promise.
+// remmeber to use that promise, we have a method then.
+
+a.then(function(val){
+   console.log(val); // called when resolved
+})
 
