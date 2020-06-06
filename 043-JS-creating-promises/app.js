@@ -10,7 +10,7 @@
 // 2. reject - this will be called when the promise is rejected.
 let a = new Promise(function(resolve, reject){
       setTimeout(function(){
-          resolve("Done.")
+          reject("Done.")
       },4000);
 });
 
@@ -19,5 +19,7 @@ let a = new Promise(function(resolve, reject){
 
 a.then(function(val){
    console.log(val); // called when resolved
+}, function(val){
+    console.log("rejected: "+val); // called when rejected
 })
 
