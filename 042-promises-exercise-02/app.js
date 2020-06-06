@@ -1,3 +1,5 @@
+
+
 var MAINAPP = (function(nsp){
     "use strict";
 
@@ -29,6 +31,6 @@ var MAINAPP = (function(nsp){
     //nsp.todos = todos;
 
     return nsp;
-})(MAINAPP || {});
+})(MAINAPP||{});
 
-console.log(MAINAPP);
+console.log("MAINAPP",MAINAPP);
