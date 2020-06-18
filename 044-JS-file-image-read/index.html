@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment-with-locales.min.js"></script>
+    <style>
+    label#Client_Time_POSIX_Val{
+        color:blue;
+    }
+
+    label#Client_Time_Date_Val{
+        color:fuchsia;
+    }
+
+    label#error_LBL{
+        background-color: crimson;
+    }
+
+label#success_LBL{
+    background-color: lightgreen;
+}
+    </style>
+</head>
+<body>
+
+
+<!-- temp image -->    
+<label for="TemperatureImgInput">Temperature Image</label>
+<input id="TemperatureImgInput" type="file" onchange="previewTemperatureFile()"><br>
+<img id="TemperatureImg" src=""  alt="Temperature preview...">
+<br>
+<!-- spo2 image -->    
+<label for="SpO2ImgInput">SpO2 Image</label>
+<input id="SpO2ImgInput" type="file" onchange="previewSpO2File()"><br>
+<img id="SpO2Img" src=""  alt="SpO2 preview...">
+
+<br>
+<br>
+<br>
+
+
+
+
+<label for="Client_Time_POSIX_Val">Client_Time_POSIX</label>
+
+<input type="text" name="Client_Time_POSIX_Val" id="Client_Time_POSIX_Val_lbl" onchange="getClient_Time_POSIX_Val();">
+<br>
+<label  id="Client_Time_POSIX_Val"></label>
+<label  id="Client_Time_Date_Val"></label>
+<br>
+<br>
+<br>
+
+
+    <label for="Patient_ID">Patient ID</label>
+    <input type="text" name="Patient_ID" id="Patient_ID" onchange="patientVar();">
+    <label for="Patient_ID" id="Patient_ID_Val"></label>
+    <br>
+    
+    <label for="HeartRate_bpm">Heart Rate (bpm)</label>
+    <input type="text" name="HeartRate_bpm" id="HeartRate_bpm" onchange="heartRateVar();">
+    <label for="HeartRate_bpm" id="HeartRate_bpm_Val"></label>
+    <br>
+
+
+    <label for="Respirationate_bpm">Respiration Rate (bpm)</label>
+    <input type="text" name="Respirationate_bpm" id="Respirationate_bpm" onchange="respirationVar();">
+    <label for="Respirationate_bpm" id="Respirationate_bpm_Val"></label>
+    <br>
+
+
+    <label for="SPO2PCT">SPO2 (%)</label>
+    <input type="text" name="SPO2PCT" id="SPO2PCT" onchange="spO2Var();">
+    <label for="SPO2PCT" id="SPO2PCT_Val"></label>
+    <br>
+
+
+    <label for="temperatureFarenheit">temperature °F</label>
+    <input type="text" name="temperatureFarenheit" id="temperatureFarenheit" onchange="temperatureFarenheitVar();">
+    <label for="temperatureFarenheit" id="temperatureFarenheit_Val"></label>
+    <label for="temperatureFarenheit" id="temperatureCelcius_Val"></label>
+    <br>
+
+
+    <br>
+    <br>
+
+    <button id="checkPOST" onclick="generatePOST();">Check Post Obj</button> <br>
+    <label for="checkPOST" id="checkPOST_LBL"></label>
+    <br>
+
+    <button id="submit" onclick="submitPOST();">Submit POST</button> <br>
+    <label for="submit" id="submit"></label>
+    <br>
+    <label for="success" id="success_LBL"></label>
+    <label for="error" id="error_LBL"></label>
+
+
+    <br>
+    <br>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
