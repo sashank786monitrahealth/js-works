@@ -33,7 +33,7 @@ function addItem(val){
 // 6. Create a function getItem that will remove a value 
 // from the start of the array you created in step 1
 
-function getItem(){
+const getItem = function(){
   a.shift(0)
   b.shift(0)
 }
